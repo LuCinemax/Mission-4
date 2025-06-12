@@ -1,5 +1,5 @@
-import styles from './separator.module.css'
-import SeparatorImg from '../assets/images/separator.png'
+import styles from './Separator.module.css'
+import SeparatorImg from '../assets/images/Separator.png'
 
 const Separator = () => {
   return (

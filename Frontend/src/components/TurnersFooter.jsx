@@ -1,8 +1,8 @@
 import styles from './TurnersFooter.module.css'
-import envelopeIcon from '../assets/Images/EnvIcon.png'
-import houseIcon from '../assets/Images/HouseIcon.png'
-import fbIcon from '../assets/Images/FBIcon.png'
-import instaIcon from '../assets/Images/InstaIcon.png'
+import envelopeIcon from '../assets/images/EnvIcon.png'
+import houseIcon from '../assets/images/HouseIcon.png'
+import fbIcon from '../assets/images/FBIcon.png'
+import instaIcon from '../assets/images/InstaIcon.png'
 
 const Footer = () => {
   return (

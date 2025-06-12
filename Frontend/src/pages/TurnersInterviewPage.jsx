@@ -3,11 +3,11 @@ import NavBar from "../components/TurnersNavBar";
 import TopHeader from "../components/TurnersTopHeader";
 import Footer from "../components/TurnersFooter";
 import styles from "./TurnersInterviewPage.module.css";
-import logo from "../assets/Images/turnerscars_logo.png";
-import finance from "../assets/Images/finance.jpg";
-import userIcon from "../assets/Images/user.png";
-import phoneIcon from "../assets/Images/phone.png";
-import locationIcon from "../assets/Images/location.png";
+import logo from "../assets/images/turnerscars_logo.png";
+import finance from "../assets/images/finance.jpg";
+import userIcon from "../assets/images/user.png";
+import phoneIcon from "../assets/images/phone.png";
+import locationIcon from "../assets/images/location.png";
 import axios from "axios";
 
 function TurnersInterviewPage() {
@@ -22,11 +22,14 @@ function TurnersInterviewPage() {
     if (!input.trim() || !jobTitle.trim()) return;
 
     try {
-      const response = await axios.post("http://localhost:3001/interview/standard", {
-        sessionId,
-        jobTitle,
-        userResponse: input,
-      });
+      const response = await axios.post(
+        "http://localhost:3001/interview/standard",
+        {
+          sessionId,
+          jobTitle,
+          userResponse: input,
+        }
+      );
       setChatHistory(response.data.history);
       setUserInput("");
     } catch (error) {
@@ -81,7 +84,7 @@ function TurnersInterviewPage() {
           <div className={styles.chatBox}>
             {/* Job Title Input and Start Button */}
             <div className={styles.jobInputSection}>
-              <label htmlFor="jobTitle">Job Title:</label>
+              <label htmlFor="jobTitle">Enter Your Full Name:</label>
               <input
                 id="jobTitle"
                 type="text"
@@ -95,37 +98,30 @@ function TurnersInterviewPage() {
                 onClick={() =>
                   handleSubmit({
                     preventDefault: () => {},
-                    customInput: "start interview",
+                    customInput: "Learn More",
                   })
                 }
               >
-                Start Interview
+                Learn More
               </button>
             </div>
 
-            {/* Chat History */}
-            <div className={styles.chatHistory}>
-              {chatHistory.map((msg, index) => (
-                <div
-                  key={index}
-                  className={msg.role === "user" ? styles.userMsg : styles.botMsg}
-                >
-                  <strong>{msg.role === "user" ? "Me:" : "Interviewer:"}</strong> {msg.text}
-                </div>
-              ))}
+            {/* Description */}
+            <div>
+              <h1>
+                "Sign up to unlock your full experience. Creating an account is
+                fast and secure, giving you access to personalized
+                recommendations, saved progress, and seamless interaction across
+                all your devices. As a registered user, you'll be able to manage
+                your preferences, revisit past activity, and receive tailored
+                updates that match your needs. Join our community today and take
+                advantage of all the features designed to make your experience
+                smarter, faster, and more convenient."
+              </h1>
             </div>
-
-            {/* Input + Submit */}
-            <form onSubmit={handleSubmit} className={styles.inputSection}>
-              <input
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                className={styles.inputField}
-                placeholder="Type your response..."
-              />
-              <button type="submit" className={styles.submitButton}>Submit</button>
-            </form>
+            <button type="submit" className={styles.submitButton}>
+              Sign Up
+            </button>
           </div>
         </section>
       </main>
