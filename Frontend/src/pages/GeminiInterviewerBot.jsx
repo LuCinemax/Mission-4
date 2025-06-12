@@ -42,7 +42,7 @@ const GeminiInterviewerBot = () => {
 
       <figure className={styles.bannerImage}>
         <div className={styles.bannerTextContainer}>
-          <h1>Interviewer Chat-Bot</h1>
+          <h1>Insurance Consultant AI</h1>
           <p>Powered By Gemini</p>
         </div>
       </figure>
@@ -51,7 +51,7 @@ const GeminiInterviewerBot = () => {
         <Separator />
       </figure>
 
-      <p className={styles.versionLabel}>v2.0-Flash – Gemini Model Standard</p>
+      <p className={styles.versionLabel}>v1.5-Flash – Gemini Model Standard</p>
 
       <main className={styles.infoContainer}>
         <div className={styles.chatBox}>

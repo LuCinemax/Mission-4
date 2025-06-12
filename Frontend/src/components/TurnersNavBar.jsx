@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import styles from './TurnersNavBar.module.css';
-import searchIcon from '../assets/Images/search.png'
+import searchIcon from '../assets/images/search.png'
 
 const NavBar = () => {
     const [openMenu, setOpenMenu] = useState(null);
